@@ -171,7 +171,7 @@ def check_user_code_in_sheet(code, sheet_ids, sheet_name):
             headers = values[0]
             data_rows = values[1:]
             try:
-              code_index = headers.index('קוד הנבדק')l
+              code_index = headers.index('קוד הנבדק')
             except Exception as e:
                 try:
                     code_index = headers.index('קוד נבדק')
