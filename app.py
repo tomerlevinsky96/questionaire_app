@@ -9,6 +9,10 @@ from tenacity import retry, stop_after_attempt, wait_exponential
 from functools import lru_cache
 import ssl
 import time
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from concurrent.futures import ThreadPoolExecutor
+
 import threading
 from googleapiclient.errors import HttpError
 app = Flask(__name__)
@@ -16,7 +20,7 @@ app.secret_key = "your_secret_key"  # Needed for session management
 code=''
 # Google Sheets API setup
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
-SERVICE_ACCOUNT_FILE = r'C:\Users\YanivA21\PycharmProjects\pythonProject58\credentials.json'  # Update with your credentials file path
+SERVICE_ACCOUNT_FILE = r'credentials.json'  # Update with your credentials file path
 SPREADSHEET_IDS = [
     '1bMPX6__XdMAoOmLnYmm_w6WEVzwHwJvp41x5LHAHXSU',
     '18GrkPPDHhZyO6fZwiQc5eyB8w143VfkbnE4Unz0iHac',
@@ -40,6 +44,14 @@ SPREADSHEET_IDS = [
 ]
 
 
+credentials_info = [
+    ('q1credentials.json', '1bMPX6__XdMAoOmLnYmm_w6WEVzwHwJvp41x5LHAHXSU'),  # Replace with your first sheet ID
+    ('q2credentials.json', '18GrkPPDHhZyO6fZwiQc5eyB8w143VfkbnE4Unz0iHac'),
+    ('q3credentials.json', '14miLnyhIY_jj0adrsoiyMlWgYGc-2RUiLcCAsF-uw_w'),
+    ('q4credentials.json', '1H1gWtumtFd0ZAIVUp5VHSAsB0IucJC2ZWEhVBcTDK_A'),
+    ('q5credentials.json', '1mTYYxbYTvsMHOqNHnmsrL4HlI0lb16pOnpByJemXmc0'),
+    # Replace with your second sheet ID
+]
 
 
 SHEET_NAME = 'תגובות לטופס 1'  # Update with the range where user codes are stored
@@ -109,85 +121,46 @@ def get_google_sheets_service():
     service = build('sheets', 'v4', credentials=creds)
     return service
 
-
-@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=1, min=4, max=30))
-@lru_cache(maxsize=1000)
-def fetch_sheet_data(sheet, sheet_id, name):
-    try:
-        print(f"Attempting to fetch data from sheet_id: {sheet_id}, range: {name}")
-        result = sheet.values().get(spreadsheetId=sheet_id, range=name).execute()
-        print(f"Successfully fetched data from {sheet_id}. Data length: {len(result.get('values', []))}")
-        return result.get('values', [])
-    except Exception as e:
-        print(f"Failed to fetch data from sheet_id: {sheet_id}, range: {name}: {e}")
-        raise  # Trigger retry if an exception is raised
-    except ssl.SSLError as ssl_error:
-        print(f"SSL Error: {ssl_error}")
-        # Retry mechanism for SSL error
-        print("Retrying after a brief delay...")
-        time.sleep(5)
-        return fetch_sheet_data(sheet, sheet_id, name)
-
-
-def fetch_data_parallel(sheet, sheet_ids, sheet_name):
+def fetch_data(key_file, sheet_id):
+    creds = ServiceAccountCredentials.from_json_keyfile_name(key_file,SCOPES)
+    client = gspread.authorize(creds)
+    sheet = client.open_by_key(sheet_id).sheet1
+    return sheet.get_all_records()
+def fetch_data_parallel(sheet_ids):
     all_data = {}  # A dictionary to store the data fetched from each sheet
-    with ThreadPoolExecutor(max_workers=len(sheet_ids)) as executor:
-        future_to_sheet = {
-            executor.submit(fetch_sheet_data, sheet, sheet_id, sheet_name): sheet_id for sheet_id in sheet_ids
-        }
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        results = list(executor.map(lambda x: fetch_data(*x), credentials_info))
 
-        # Loop through each future as they complete
-        for future in as_completed(future_to_sheet):
-            sheet_id = future_to_sheet[future]
-            try:
-                data = future.result()
-                if data:
-                    print(
-                        f"Data fetched from sheet_id {sheet_id}: {data[:5]}...")  # Print the first 5 rows for debugging
-                all_data[sheet_id] = data
-            except Exception as e:
-                print(f"Error while fetching data for sheet_id {sheet_id}: {e}")
+    # Loop through each result and associate it with the corresponding sheet_id
+    for sheet_id, data in zip(sheet_ids, results):
+        all_data[sheet_id] = data
 
     return all_data
 
 
 def check_user_code_in_sheet(code, sheet_ids, sheet_name):
-        service = get_google_sheets_service()  # Ensure this is returning the correct Google Sheets API service
-        sheet = service.spreadsheets()
-
-        print(f"Checking for code: {code}")
-
-        # Fetch data in parallel from all sheets
-        while(1):
-         try:
-          all_data = fetch_data_parallel(sheet, sheet_ids,sheet_name)
-          break
-         except Exception as e:
-            continue
-        # Iterate over all fetched data and print all codes from each sheet
-        for idx,sheet_id in enumerate(SPREADSHEET_IDS):
-           try:
+    limited_sheet_ids = sheet_ids[:5]
+    all_data = fetch_data_parallel(limited_sheet_ids)
+    # Iterate over all fetched data and check for the code
+    for idx, sheet_id in enumerate(limited_sheet_ids):
             values = all_data.get(sheet_id, [])
-            headers = values[0]
+            if not values:
+                continue
             data_rows = values[1:]
-            try:
-              code_index = headers.index('קוד הנבדק')
-            except Exception as e:
-                try:
-                    code_index = headers.index('קוד נבדק')
-                except Exception as e:
-                    continue
             for row in data_rows:
-              try:
-                if row[code_index] == code:
-                   google_forms[idx]["submitted"] = True
-                   break
-                else:
-                   google_forms[idx]["submitted"] = False
-              except Exception as e:
-                  continue
-           except Exception as e:
-               continue
+                if 'קוד הנבדק' in row and row['קוד הנבדק']:  # Check if the key exists and has a value
+                    if row['קוד הנבדק'] == code:
+                        google_forms[idx]["submitted"] = True
+                        break
+                    else:
+                        google_forms[idx]["submitted"] = False
+                elif 'קוד נבדק' in row and row['קוד נבדק']:  # Check for the other key
+                    if row['קוד נבדק'] == code:
+                        google_forms[idx]["submitted"] = True
+                        break
+                    else:
+                        google_forms[idx]["submitted"] = False
+
 
 @app.route("/", methods=["GET", "POST"])
 def enter_code():
