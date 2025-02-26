@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,6 @@
         position: relative;
     }
 
-    /* Adding a dark overlay */
     body::before {
         content: "";
         position: absolute;
@@ -27,12 +26,12 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.4); /* Adjust opacity here */
+        background: rgba(0, 0, 0, 0.4);
         z-index: 0;
     }
 
     .container, .form-list {
-        position: relative; /* Ensure content is above the overlay */
+        position: relative;
         z-index: 1;
     }
 
@@ -76,7 +75,9 @@
     }
 
     .form-item .row {
+        display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
     .status-text {
@@ -88,8 +89,21 @@
         color: #28a745;
     }
 
+    .btn.btn-primary {
+        background-color: #007bff;
+        border: none;
+        padding: 8px 16px;
+        text-decoration: none;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .btn.btn-primary:hover {
+        background-color: #0056b3;
+    }
+
     @media (max-width: 768px) {
-        .form-item {
+        .form-item .row {
             flex-direction: column;
             text-align: center;
         }
@@ -97,38 +111,57 @@
             margin-bottom: 10px;
         }
     }
-</style>
+    </style>
 </head>
 <body>
     <div class="container">
-    <h1 class="form-title">שאלוני מחקר MRI - קוד נבדק: {{ code }}</h1>
+        <h1 class="form-title">שאלוני מחקר MRI - קוד נבדק: {{ code }}</h1>
     </div>
     <div class="form-list">
         <form method="POST" id="formsForm">
-            {% for form in forms %}
-            <div class="form-item {% if form.submitted %}submitted{% endif %}" id="form-{{ loop.index0 }}">
-                <div class="row">
-                    <div class="col">
-                        <h3>{{ form.name }}</h3>
-                    </div>
-                    <div class="col-auto">
-                        <span class="status-text">
-                            {% if form.submitted %}
-                            ✓ הושלם
-                            {% else %}
-                            ממתין למילוי
-                            {% endif %}
-                        </span>
-                    </div>
-                    <div class="col-auto">
-                        <a href="{{ form.url }}" class="btn btn-primary" target="_blank">
-                            פתח שאלון
-                        </a>
-                    </div>
-                </div>
+            <div id="forms-container">
+                <!-- Forms will be dynamically inserted here -->
             </div>
-            {% endfor %}
         </form>
     </div>
+
+    <script>
+        const code = "{{ code }}";
+        const source = new EventSource(`/subject/${code}/events`);
+
+        source.onmessage = function(event) {
+            const forms = JSON.parse(event.data);
+            const container = document.getElementById("forms-container");
+            container.innerHTML = "";  // Clear existing content
+
+            forms.forEach((form, index) => {
+                const div = document.createElement("div");
+                div.className = `form-item ${form.submitted ? "submitted" : ""}`;
+                div.id = `form-${index}`;
+                div.innerHTML = `
+                    <div class="row">
+                        <div class="col">
+                            <h3>${form.name}</h3>
+                        </div>
+                        <div class="col-auto">
+                            <span class="status-text">
+                                ${form.submitted ? "✓ הושלם" : "ממתין למילוי"}
+                            </span>
+                        </div>
+                        <div class="col-auto">
+                            <a href="${form.url}" class="btn btn-primary" target="_blank">
+                                פתח שאלון
+                            </a>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        };
+
+        source.onerror = function() {
+            console.log("Error with SSE connection. Retrying...");
+        };
+    </script>
 </body>
 </html>
