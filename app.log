@@ -1,0 +1,344 @@
+2025-02-11 16:54:32,481 [INFO] Starting server...
+2025-02-11 16:54:32,485 [INFO] Serving on http://0.0.0.0:5001
+2025-02-11 16:55:01,285 [INFO] Starting server...
+2025-02-11 16:55:01,290 [INFO] Serving on http://0.0.0.0:5002
+2025-02-11 16:55:38,691 [INFO] 132.66.42.8 - - [11/Feb/2025:16:55:38 +0300] "GET / HTTP/1.1" 200 1688 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:55:38,735 [INFO] 132.66.42.8 - - [11/Feb/2025:16:55:38 +0300] "GET /favicon.ico HTTP/1.1" 404 207 "http://132.66.42.8:5002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:55:44,267 [INFO] Code submitted: BB019
+2025-02-11 16:55:44,268 [INFO] 132.66.42.8 - - [11/Feb/2025:16:55:44 +0300] "POST / HTTP/1.1" 200 1962 "http://132.66.42.8:5002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:55:45,275 [INFO] Accessing subject page for code: BB019
+2025-02-11 16:55:45,275 [INFO] Checking code: BB019
+2025-02-11 16:55:45,275 [ERROR] Exception on /subject/BB019 [GET]
+Traceback (most recent call last):
+  File "C:\Users\YanivA21\PycharmProjects\pythonProject58\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\YanivA21\PycharmProjects\pythonProject58\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\YanivA21\PycharmProjects\pythonProject58\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\YanivA21\PycharmProjects\pythonProject58\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\YanivA21\PycharmProjects\pythonProject58\app.py", line 118, in subject_page
+    check_user_code_in_sheets(code)
+  File "C:\Users\YanivA21\PycharmProjects\pythonProject58\app.py", line 96, in check_user_code_in_sheets
+    for i in range(0, len(SPREADSHEET_IDS), batch_size):
+                          ^^^^^^^^^^^^^^^
+NameError: name 'SPREADSHEET_IDS' is not defined
+2025-02-11 16:55:45,281 [INFO] 132.66.42.8 - - [11/Feb/2025:16:55:45 +0300] "GET /subject/BB019 HTTP/1.1" 500 265 "http://132.66.42.8:5002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:56:43,047 [INFO] Starting server...
+2025-02-11 16:56:43,051 [INFO] Serving on http://0.0.0.0:5002
+2025-02-11 16:56:53,362 [INFO] Accessing subject page for code: BB019
+2025-02-11 16:56:53,362 [INFO] Checking code: BB019
+2025-02-11 16:56:53,373 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:56:53,373 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:56:53,373 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:56:53,373 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:56:53,373 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:56:53,376 [INFO] Created new Google Sheets service instance
+2025-02-11 16:56:53,377 [INFO] Created new Google Sheets service instance
+2025-02-11 16:56:53,414 [INFO] Created new Google Sheets service instance
+2025-02-11 16:56:53,444 [INFO] Created new Google Sheets service instance
+2025-02-11 16:56:53,447 [INFO] Created new Google Sheets service instance
+2025-02-11 16:56:56,120 [INFO] Successfully fetched data from sheet 14miLnyhIY_jj0adrsoiyMlWgYGc-2RUiLcCAsF-uw_w
+2025-02-11 16:56:56,160 [INFO] Successfully fetched data from sheet 1bMPX6__XdMAoOmLnYmm_w6WEVzwHwJvp41x5LHAHXSU
+2025-02-11 16:56:56,223 [INFO] Successfully fetched data from sheet 1mTYYxbYTvsMHOqNHnmsrL4HlI0lb16pOnpByJemXmc0
+2025-02-11 16:56:56,330 [INFO] Successfully fetched data from sheet 1H1gWtumtFd0ZAIVUp5VHSAsB0IucJC2ZWEhVBcTDK_A
+2025-02-11 16:56:56,700 [INFO] Successfully fetched data from sheet 18GrkPPDHhZyO6fZwiQc5eyB8w143VfkbnE4Unz0iHac
+2025-02-11 16:56:56,707 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:56:56,707 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:56:56,707 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:56:56,707 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:56:56,707 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:56:56,710 [INFO] Created new Google Sheets service instance
+2025-02-11 16:56:56,711 [INFO] Created new Google Sheets service instance
+2025-02-11 16:56:56,823 [INFO] Created new Google Sheets service instance
+2025-02-11 16:56:56,870 [INFO] Created new Google Sheets service instance
+2025-02-11 16:56:56,962 [INFO] Created new Google Sheets service instance
+2025-02-11 16:56:59,356 [INFO] Successfully fetched data from sheet 1ClTx398ooAK41_G1sUvPsqmgCH2C1bBaN_HCzHU9Kqo
+2025-02-11 16:56:59,490 [INFO] Successfully fetched data from sheet 1pC-DQ5MayogML7QuLbSUG3LILg691O_vsonAf-miM6o
+2025-02-11 16:56:59,596 [INFO] Successfully fetched data from sheet 18kwGBE1yKrrAoqx_DhH2lBtN2afLam9SNwdwZ-AHz3c
+2025-02-11 16:56:59,628 [INFO] Successfully fetched data from sheet 19m2Nttr7GI8nia6HKKirmVgHPIMjhBAuuLLFDDfud_U
+2025-02-11 16:56:59,910 [INFO] Successfully fetched data from sheet 1YhDYOy5lmWQVOY2czT8Az9l8GiplK8chyUylFuF1DvU
+2025-02-11 16:56:59,921 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:56:59,922 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:56:59,922 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:56:59,922 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:56:59,922 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:56:59,924 [INFO] Created new Google Sheets service instance
+2025-02-11 16:56:59,958 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:00,021 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:00,083 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:00,488 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:02,582 [INFO] Successfully fetched data from sheet 1bunJxzNu27EdmA-0iPGmCy7NEhL8BRt0g86Ca5MRLJE
+2025-02-11 16:57:02,718 [INFO] Successfully fetched data from sheet 1tuoVLZyu0CnBiM-anQuy_M-lcDbqkOFQ4aFyCotqqmM
+2025-02-11 16:57:02,815 [INFO] Successfully fetched data from sheet 1dteeH-VQtUpeyF3eJbI4R2ReAKTTbvNjTbVKLr2MDNs
+2025-02-11 16:57:02,952 [INFO] Successfully fetched data from sheet 1Vk11oeIa2YdabO7CCrUlI_VqXvgKtp8HP-ZFkgBHMak
+2025-02-11 16:57:03,216 [INFO] Successfully fetched data from sheet 1j_gfQegjX4QqgtKPsYJBqSq1FExQ3KMg7zORaDdjoko
+2025-02-11 16:57:03,223 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:03,225 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:03,438 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:03,438 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:03,438 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:03,443 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:03,478 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:03,557 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:05,088 [INFO] Successfully fetched data from sheet 1q_zb8QvA2SndJ0Vm7DK8Hia50I5LUPKh6JUorPKe048
+2025-02-11 16:57:05,678 [INFO] Successfully fetched data from sheet 1vgpvKoV61MYF39onsHXGanjrml8AKt5Ntc_CisEmGAs
+2025-02-11 16:57:05,802 [INFO] Successfully fetched data from sheet 13i845yj4fsOJWklm3Idf-iBAmWZjoS5Z1mLnUxpXbEg
+2025-02-11 16:57:05,968 [INFO] Successfully fetched data from sheet 19LwBeLQqeOEFB3hDVUVDHbYOgnfNH5wxzIZmrwsT9QQ
+2025-02-11 16:57:05,973 [INFO] 132.66.42.8 - - [11/Feb/2025:16:56:53 +0300] "GET /subject/BB019 HTTP/1.1" 200 19434 "http://132.66.42.8:5002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:57:06,063 [INFO] 132.66.42.8 - - [11/Feb/2025:16:57:05 +0300] "GET /static/DALL%C3%82%C2%B7E%202025-01-26%2022.43.32%20-%20A%20detailed%20illustration%20of%20a%20person%20answering%20questionnaires%20for%20neurobiology%20research.%20The%20person%20is%20seated%20at%20a%20desk%20in%20a%20modern%2C%20brightly%20lit%20labor.webp HTTP/1.1" 200 540074 "http://132.66.42.8:5002/subject/BB019" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:57:06,076 [INFO] 132.66.42.8 - - [11/Feb/2025:16:57:06 +0300] "GET / HTTP/1.1" 200 1688 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:57:11,131 [INFO] Code submitted: BB019
+2025-02-11 16:57:11,132 [INFO] 132.66.42.8 - - [11/Feb/2025:16:57:11 +0300] "POST / HTTP/1.1" 200 1962 "http://132.66.42.8:5002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:57:11,898 [INFO] Accessing subject page for code: BB019
+2025-02-11 16:57:11,899 [INFO] Checking code: BB019
+2025-02-11 16:57:11,907 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:11,907 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:11,907 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:11,907 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:11,907 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:11,910 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:11,919 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:12,089 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:12,137 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:12,882 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:14,060 [INFO] Successfully fetched data from sheet 1bMPX6__XdMAoOmLnYmm_w6WEVzwHwJvp41x5LHAHXSU
+2025-02-11 16:57:14,184 [INFO] Successfully fetched data from sheet 18GrkPPDHhZyO6fZwiQc5eyB8w143VfkbnE4Unz0iHac
+2025-02-11 16:57:14,655 [INFO] Successfully fetched data from sheet 14miLnyhIY_jj0adrsoiyMlWgYGc-2RUiLcCAsF-uw_w
+2025-02-11 16:57:14,736 [INFO] Successfully fetched data from sheet 1H1gWtumtFd0ZAIVUp5VHSAsB0IucJC2ZWEhVBcTDK_A
+2025-02-11 16:57:14,848 [INFO] Successfully fetched data from sheet 1mTYYxbYTvsMHOqNHnmsrL4HlI0lb16pOnpByJemXmc0
+2025-02-11 16:57:14,858 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:14,858 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:14,858 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:14,858 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:14,859 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:14,866 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:14,868 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:14,869 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:14,882 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:15,051 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:17,155 [INFO] Successfully fetched data from sheet 19m2Nttr7GI8nia6HKKirmVgHPIMjhBAuuLLFDDfud_U
+2025-02-11 16:57:17,175 [INFO] Successfully fetched data from sheet 1ClTx398ooAK41_G1sUvPsqmgCH2C1bBaN_HCzHU9Kqo
+2025-02-11 16:57:17,409 [INFO] Successfully fetched data from sheet 1pC-DQ5MayogML7QuLbSUG3LILg691O_vsonAf-miM6o
+2025-02-11 16:57:17,457 [INFO] Successfully fetched data from sheet 1YhDYOy5lmWQVOY2czT8Az9l8GiplK8chyUylFuF1DvU
+2025-02-11 16:57:17,879 [INFO] Successfully fetched data from sheet 18kwGBE1yKrrAoqx_DhH2lBtN2afLam9SNwdwZ-AHz3c
+2025-02-11 16:57:17,886 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:17,887 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:17,887 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:17,887 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:17,887 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:17,889 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:17,892 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:17,893 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:17,920 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:18,045 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:20,088 [INFO] Successfully fetched data from sheet 1tuoVLZyu0CnBiM-anQuy_M-lcDbqkOFQ4aFyCotqqmM
+2025-02-11 16:57:20,581 [INFO] Successfully fetched data from sheet 1dteeH-VQtUpeyF3eJbI4R2ReAKTTbvNjTbVKLr2MDNs
+2025-02-11 16:57:20,923 [INFO] Successfully fetched data from sheet 1j_gfQegjX4QqgtKPsYJBqSq1FExQ3KMg7zORaDdjoko
+2025-02-11 16:57:20,992 [INFO] Successfully fetched data from sheet 1Vk11oeIa2YdabO7CCrUlI_VqXvgKtp8HP-ZFkgBHMak
+2025-02-11 16:57:20,993 [INFO] Successfully fetched data from sheet 1bunJxzNu27EdmA-0iPGmCy7NEhL8BRt0g86Ca5MRLJE
+2025-02-11 16:57:21,000 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:21,000 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:21,000 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:21,000 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:21,002 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:21,031 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:21,061 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:21,218 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:23,172 [INFO] Successfully fetched data from sheet 1q_zb8QvA2SndJ0Vm7DK8Hia50I5LUPKh6JUorPKe048
+2025-02-11 16:57:23,317 [INFO] Successfully fetched data from sheet 13i845yj4fsOJWklm3Idf-iBAmWZjoS5Z1mLnUxpXbEg
+2025-02-11 16:57:23,778 [INFO] Successfully fetched data from sheet 1vgpvKoV61MYF39onsHXGanjrml8AKt5Ntc_CisEmGAs
+2025-02-11 16:57:23,785 [INFO] Successfully fetched data from sheet 19LwBeLQqeOEFB3hDVUVDHbYOgnfNH5wxzIZmrwsT9QQ
+2025-02-11 16:57:23,785 [INFO] 132.66.42.8 - - [11/Feb/2025:16:57:11 +0300] "GET /subject/BB019 HTTP/1.1" 200 19434 "http://132.66.42.8:5002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:57:23,800 [INFO] 132.66.42.8 - - [11/Feb/2025:16:57:23 +0300] "GET /static/DALL%C3%82%C2%B7E%202025-01-26%2022.43.32%20-%20A%20detailed%20illustration%20of%20a%20person%20answering%20questionnaires%20for%20neurobiology%20research.%20The%20person%20is%20seated%20at%20a%20desk%20in%20a%20modern%2C%20brightly%20lit%20labor.webp HTTP/1.1" 304 - "http://132.66.42.8:5002/subject/BB019" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:57:36,079 [INFO] Accessing subject page for code: BB019
+2025-02-11 16:57:36,079 [INFO] Checking code: BB019
+2025-02-11 16:57:36,086 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:36,090 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:36,310 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:36,310 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:36,310 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:36,311 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:36,314 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:36,369 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:36,414 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:36,477 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:38,232 [INFO] Successfully fetched data from sheet 18GrkPPDHhZyO6fZwiQc5eyB8w143VfkbnE4Unz0iHac
+2025-02-11 16:57:38,611 [INFO] Successfully fetched data from sheet 1bMPX6__XdMAoOmLnYmm_w6WEVzwHwJvp41x5LHAHXSU
+2025-02-11 16:57:39,086 [INFO] Successfully fetched data from sheet 1mTYYxbYTvsMHOqNHnmsrL4HlI0lb16pOnpByJemXmc0
+2025-02-11 16:57:39,198 [INFO] Successfully fetched data from sheet 1H1gWtumtFd0ZAIVUp5VHSAsB0IucJC2ZWEhVBcTDK_A
+2025-02-11 16:57:39,307 [INFO] Successfully fetched data from sheet 14miLnyhIY_jj0adrsoiyMlWgYGc-2RUiLcCAsF-uw_w
+2025-02-11 16:57:39,314 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:39,317 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:39,540 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:39,545 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:39,765 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:39,769 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:39,987 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:39,987 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:39,992 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:40,024 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:41,339 [INFO] Successfully fetched data from sheet 1YhDYOy5lmWQVOY2czT8Az9l8GiplK8chyUylFuF1DvU
+2025-02-11 16:57:41,501 [INFO] Successfully fetched data from sheet 19m2Nttr7GI8nia6HKKirmVgHPIMjhBAuuLLFDDfud_U
+2025-02-11 16:57:41,664 [INFO] Successfully fetched data from sheet 1ClTx398ooAK41_G1sUvPsqmgCH2C1bBaN_HCzHU9Kqo
+2025-02-11 16:57:41,711 [INFO] Successfully fetched data from sheet 18kwGBE1yKrrAoqx_DhH2lBtN2afLam9SNwdwZ-AHz3c
+2025-02-11 16:57:41,786 [INFO] Successfully fetched data from sheet 1pC-DQ5MayogML7QuLbSUG3LILg691O_vsonAf-miM6o
+2025-02-11 16:57:41,798 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:41,801 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:41,983 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:41,999 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:41,999 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:41,999 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:42,065 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:42,158 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:42,172 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:42,314 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:44,394 [INFO] Successfully fetched data from sheet 1tuoVLZyu0CnBiM-anQuy_M-lcDbqkOFQ4aFyCotqqmM
+2025-02-11 16:57:44,672 [INFO] Successfully fetched data from sheet 1dteeH-VQtUpeyF3eJbI4R2ReAKTTbvNjTbVKLr2MDNs
+2025-02-11 16:57:44,967 [INFO] Successfully fetched data from sheet 1j_gfQegjX4QqgtKPsYJBqSq1FExQ3KMg7zORaDdjoko
+2025-02-11 16:57:44,991 [INFO] Successfully fetched data from sheet 1bunJxzNu27EdmA-0iPGmCy7NEhL8BRt0g86Ca5MRLJE
+2025-02-11 16:57:44,995 [INFO] Successfully fetched data from sheet 1Vk11oeIa2YdabO7CCrUlI_VqXvgKtp8HP-ZFkgBHMak
+2025-02-11 16:57:45,001 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:45,004 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:45,218 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:45,218 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:45,218 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:57:45,222 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:45,253 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:45,255 [INFO] Created new Google Sheets service instance
+2025-02-11 16:57:46,802 [INFO] Successfully fetched data from sheet 1q_zb8QvA2SndJ0Vm7DK8Hia50I5LUPKh6JUorPKe048
+2025-02-11 16:57:47,376 [INFO] Successfully fetched data from sheet 13i845yj4fsOJWklm3Idf-iBAmWZjoS5Z1mLnUxpXbEg
+2025-02-11 16:57:47,767 [ERROR] Error fetching sheet 1vgpvKoV61MYF39onsHXGanjrml8AKt5Ntc_CisEmGAs: <HttpError 429 when requesting https://sheets.googleapis.com/v4/spreadsheets/1vgpvKoV61MYF39onsHXGanjrml8AKt5Ntc_CisEmGAs/values/%D7%AA%D7%92%D7%95%D7%91%D7%95%D7%AA%20%D7%9C%D7%98%D7%95%D7%A4%D7%A1%201%21A1%3AZ1000?alt=json returned "Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:231973614550'.". Details: "[{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'RATE_LIMIT_EXCEEDED', 'domain': 'googleapis.com', 'metadata': {'quota_limit': 'ReadRequestsPerMinutePerUser', 'quota_location': 'global', 'quota_limit_value': '60', 'consumer': 'projects/231973614550', 'quota_metric': 'sheets.googleapis.com/read_requests', 'service': 'sheets.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Request a higher quota limit.', 'url': 'https://cloud.google.com/docs/quotas/help/request_increase'}]}]">
+2025-02-11 16:57:47,878 [INFO] Successfully fetched data from sheet 19LwBeLQqeOEFB3hDVUVDHbYOgnfNH5wxzIZmrwsT9QQ
+2025-02-11 16:57:47,879 [INFO] 132.66.42.8 - - [11/Feb/2025:16:57:36 +0300] "GET /subject/BB019 HTTP/1.1" 200 19434 "http://132.66.42.8:5002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:57:47,893 [INFO] 132.66.42.8 - - [11/Feb/2025:16:57:47 +0300] "GET /static/DALL%C3%82%C2%B7E%202025-01-26%2022.43.32%20-%20A%20detailed%20illustration%20of%20a%20person%20answering%20questionnaires%20for%20neurobiology%20research.%20The%20person%20is%20seated%20at%20a%20desk%20in%20a%20modern%2C%20brightly%20lit%20labor.webp HTTP/1.1" 304 - "http://132.66.42.8:5002/subject/BB019" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:58:04,953 [INFO] 132.66.42.8 - - [11/Feb/2025:16:58:04 +0300] "GET / HTTP/1.1" 200 1688 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:58:08,268 [INFO] Code submitted: 0065
+2025-02-11 16:58:08,268 [INFO] 132.66.42.8 - - [11/Feb/2025:16:58:08 +0300] "POST / HTTP/1.1" 200 1960 "http://132.66.42.8:5002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:58:09,162 [INFO] Accessing subject page for code: 0065
+2025-02-11 16:58:09,163 [INFO] Checking code: 0065
+2025-02-11 16:58:09,171 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:09,171 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:09,171 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:09,173 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:09,174 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:09,174 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:09,175 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:09,305 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:09,322 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:09,430 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:11,810 [INFO] Successfully fetched data from sheet 18GrkPPDHhZyO6fZwiQc5eyB8w143VfkbnE4Unz0iHac
+2025-02-11 16:58:11,818 [INFO] Successfully fetched data from sheet 1bMPX6__XdMAoOmLnYmm_w6WEVzwHwJvp41x5LHAHXSU
+2025-02-11 16:58:11,869 [INFO] Successfully fetched data from sheet 14miLnyhIY_jj0adrsoiyMlWgYGc-2RUiLcCAsF-uw_w
+2025-02-11 16:58:12,161 [INFO] Successfully fetched data from sheet 1mTYYxbYTvsMHOqNHnmsrL4HlI0lb16pOnpByJemXmc0
+2025-02-11 16:58:12,327 [INFO] Successfully fetched data from sheet 1H1gWtumtFd0ZAIVUp5VHSAsB0IucJC2ZWEhVBcTDK_A
+2025-02-11 16:58:12,337 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:12,337 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:12,337 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:12,338 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:12,338 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:12,342 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:12,344 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:12,348 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:12,349 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:12,476 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:15,145 [INFO] Successfully fetched data from sheet 1YhDYOy5lmWQVOY2czT8Az9l8GiplK8chyUylFuF1DvU
+2025-02-11 16:58:15,188 [INFO] Successfully fetched data from sheet 19m2Nttr7GI8nia6HKKirmVgHPIMjhBAuuLLFDDfud_U
+2025-02-11 16:58:15,240 [INFO] Successfully fetched data from sheet 1ClTx398ooAK41_G1sUvPsqmgCH2C1bBaN_HCzHU9Kqo
+2025-02-11 16:58:15,724 [INFO] Successfully fetched data from sheet 1pC-DQ5MayogML7QuLbSUG3LILg691O_vsonAf-miM6o
+2025-02-11 16:58:15,818 [INFO] Successfully fetched data from sheet 18kwGBE1yKrrAoqx_DhH2lBtN2afLam9SNwdwZ-AHz3c
+2025-02-11 16:58:15,827 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:15,827 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:15,827 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:15,827 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:15,827 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:15,830 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:15,832 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:15,833 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:15,935 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:16,813 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:18,479 [INFO] Successfully fetched data from sheet 1Vk11oeIa2YdabO7CCrUlI_VqXvgKtp8HP-ZFkgBHMak
+2025-02-11 16:58:18,635 [INFO] Successfully fetched data from sheet 1tuoVLZyu0CnBiM-anQuy_M-lcDbqkOFQ4aFyCotqqmM
+2025-02-11 16:58:18,823 [INFO] Successfully fetched data from sheet 1bunJxzNu27EdmA-0iPGmCy7NEhL8BRt0g86Ca5MRLJE
+2025-02-11 16:58:18,855 [INFO] Successfully fetched data from sheet 1dteeH-VQtUpeyF3eJbI4R2ReAKTTbvNjTbVKLr2MDNs
+2025-02-11 16:58:18,904 [INFO] Successfully fetched data from sheet 1j_gfQegjX4QqgtKPsYJBqSq1FExQ3KMg7zORaDdjoko
+2025-02-11 16:58:18,912 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:18,914 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:19,128 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:19,128 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:19,129 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:19,133 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:19,192 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:19,271 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:20,855 [INFO] Successfully fetched data from sheet 1q_zb8QvA2SndJ0Vm7DK8Hia50I5LUPKh6JUorPKe048
+2025-02-11 16:58:21,214 [INFO] Successfully fetched data from sheet 13i845yj4fsOJWklm3Idf-iBAmWZjoS5Z1mLnUxpXbEg
+2025-02-11 16:58:21,257 [INFO] Successfully fetched data from sheet 1vgpvKoV61MYF39onsHXGanjrml8AKt5Ntc_CisEmGAs
+2025-02-11 16:58:21,685 [INFO] Successfully fetched data from sheet 19LwBeLQqeOEFB3hDVUVDHbYOgnfNH5wxzIZmrwsT9QQ
+2025-02-11 16:58:21,685 [INFO] 132.66.42.8 - - [11/Feb/2025:16:58:09 +0300] "GET /subject/0065 HTTP/1.1" 200 19414 "http://132.66.42.8:5002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:58:21,699 [INFO] 132.66.42.8 - - [11/Feb/2025:16:58:21 +0300] "GET /static/DALL%C3%82%C2%B7E%202025-01-26%2022.43.32%20-%20A%20detailed%20illustration%20of%20a%20person%20answering%20questionnaires%20for%20neurobiology%20research.%20The%20person%20is%20seated%20at%20a%20desk%20in%20a%20modern%2C%20brightly%20lit%20labor.webp HTTP/1.1" 304 - "http://132.66.42.8:5002/subject/0065" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:58:34,435 [INFO] Accessing subject page for code: 0065
+2025-02-11 16:58:34,435 [INFO] Checking code: 0065
+2025-02-11 16:58:34,443 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:34,443 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:34,443 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:34,443 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:34,443 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:34,445 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:34,447 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:34,449 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:34,824 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:35,548 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:36,845 [INFO] Successfully fetched data from sheet 18GrkPPDHhZyO6fZwiQc5eyB8w143VfkbnE4Unz0iHac
+2025-02-11 16:58:36,881 [INFO] Successfully fetched data from sheet 1bMPX6__XdMAoOmLnYmm_w6WEVzwHwJvp41x5LHAHXSU
+2025-02-11 16:58:36,886 [INFO] Successfully fetched data from sheet 14miLnyhIY_jj0adrsoiyMlWgYGc-2RUiLcCAsF-uw_w
+2025-02-11 16:58:37,540 [INFO] Successfully fetched data from sheet 1H1gWtumtFd0ZAIVUp5VHSAsB0IucJC2ZWEhVBcTDK_A
+2025-02-11 16:58:37,616 [INFO] Successfully fetched data from sheet 1mTYYxbYTvsMHOqNHnmsrL4HlI0lb16pOnpByJemXmc0
+2025-02-11 16:58:37,624 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:37,625 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:37,625 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:37,625 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:37,625 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:37,631 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:37,632 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:37,650 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:37,652 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:37,771 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:40,078 [INFO] Successfully fetched data from sheet 19m2Nttr7GI8nia6HKKirmVgHPIMjhBAuuLLFDDfud_U
+2025-02-11 16:58:40,127 [INFO] Successfully fetched data from sheet 1pC-DQ5MayogML7QuLbSUG3LILg691O_vsonAf-miM6o
+2025-02-11 16:58:40,197 [INFO] Successfully fetched data from sheet 1YhDYOy5lmWQVOY2czT8Az9l8GiplK8chyUylFuF1DvU
+2025-02-11 16:58:40,255 [INFO] Successfully fetched data from sheet 1ClTx398ooAK41_G1sUvPsqmgCH2C1bBaN_HCzHU9Kqo
+2025-02-11 16:58:40,790 [INFO] Successfully fetched data from sheet 18kwGBE1yKrrAoqx_DhH2lBtN2afLam9SNwdwZ-AHz3c
+2025-02-11 16:58:40,798 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:40,800 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:41,032 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:41,032 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:41,032 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:41,032 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:41,038 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:41,114 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:41,116 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:41,164 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:43,099 [INFO] Successfully fetched data from sheet 1bunJxzNu27EdmA-0iPGmCy7NEhL8BRt0g86Ca5MRLJE
+2025-02-11 16:58:43,524 [INFO] Successfully fetched data from sheet 1tuoVLZyu0CnBiM-anQuy_M-lcDbqkOFQ4aFyCotqqmM
+2025-02-11 16:58:43,564 [INFO] Successfully fetched data from sheet 1Vk11oeIa2YdabO7CCrUlI_VqXvgKtp8HP-ZFkgBHMak
+2025-02-11 16:58:43,595 [INFO] Successfully fetched data from sheet 1dteeH-VQtUpeyF3eJbI4R2ReAKTTbvNjTbVKLr2MDNs
+2025-02-11 16:58:44,110 [INFO] Successfully fetched data from sheet 1j_gfQegjX4QqgtKPsYJBqSq1FExQ3KMg7zORaDdjoko
+2025-02-11 16:58:44,117 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:44,119 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:44,334 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:44,339 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:44,568 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:44,568 [INFO] file_cache is only supported with oauth2client<4.0.0
+2025-02-11 16:58:44,572 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:44,575 [INFO] Created new Google Sheets service instance
+2025-02-11 16:58:45,940 [INFO] Successfully fetched data from sheet 1q_zb8QvA2SndJ0Vm7DK8Hia50I5LUPKh6JUorPKe048
+2025-02-11 16:58:46,452 [INFO] Successfully fetched data from sheet 13i845yj4fsOJWklm3Idf-iBAmWZjoS5Z1mLnUxpXbEg
+2025-02-11 16:58:46,513 [INFO] Successfully fetched data from sheet 19LwBeLQqeOEFB3hDVUVDHbYOgnfNH5wxzIZmrwsT9QQ
+2025-02-11 16:58:47,007 [INFO] Successfully fetched data from sheet 1vgpvKoV61MYF39onsHXGanjrml8AKt5Ntc_CisEmGAs
+2025-02-11 16:58:47,008 [INFO] 132.66.42.8 - - [11/Feb/2025:16:58:34 +0300] "GET /subject/0065 HTTP/1.1" 200 19414 "http://132.66.42.8:5002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
+2025-02-11 16:58:47,043 [INFO] 132.66.42.8 - - [11/Feb/2025:16:58:47 +0300] "GET /static/DALL%C3%82%C2%B7E%202025-01-26%2022.43.32%20-%20A%20detailed%20illustration%20of%20a%20person%20answering%20questionnaires%20for%20neurobiology%20research.%20The%20person%20is%20seated%20at%20a%20desk%20in%20a%20modern%2C%20brightly%20lit%20labor.webp HTTP/1.1" 304 - "http://132.66.42.8:5002/subject/0065" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"

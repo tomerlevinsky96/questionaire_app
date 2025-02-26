@@ -21,14 +21,11 @@
                     </form>
                     {% if subject_link %}
                     <div class="mt-3 text-center">
-                        {% if generated_code %}
                         <p class="text-warning"></p>
-                        <p><strong>סיסמה:</strong></p>
+                        <p><strong>:סיסמה</strong></p>
                         <p><strong> {{ generated_code }}</strong></p>
                           <!-- Show  password -->
-                        {% else %}
-                        <p> הנה הקישור לשאלונים:</p>
-                        {% endif %}
+                        <p><strong> :קישור לשאלון</strong></p>
                         <a href="{{ subject_link }}" class="btn btn-link">{{ subject_link }}</a>
                     </div>
                     {% endif %}

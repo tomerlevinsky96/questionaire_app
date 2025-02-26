@@ -98,7 +98,7 @@ def update_form_statuses():
                         if normalized_code in (normalized_col1, normalized_col2):
                             google_forms[int(normalized_col1) - 1]["submitted"] = True
                 form_statuses[code] = google_forms
-            time.sleep(5)  # Check every 5 seconds (adjust as needed)
+            time.sleep(1)  # Check every 5 seconds (adjust as needed)
         except Exception as e:
             print(f"Error updating form statuses: {str(e)}")
             time.sleep(5)  # Wait before retrying on error
@@ -216,10 +216,21 @@ def subject_login(code):
 def subject_page(code):
     if not session.get(f'subject_authenticated_{code}'):
         return redirect(url_for('subject_login', code=code))
-
     if code not in form_statuses:
         form_statuses[code] = get_google_forms(code)
-
+    data = fetch_data('q1credentials.json', '1fcFZc2w30xJGAvb_oIaKFbtxgvABWYT9Ttgua4M9_G8')
+    for code in form_statuses.keys():
+        google_forms = get_google_forms(code)
+        normalized_code = normalize_code(code)
+        for form in google_forms:
+            form["submitted"] = False
+        for row in data:
+            if len(row) >= 2:
+                normalized_col1 = normalize_code(row[0])
+                normalized_col2 = normalize_code(row[1])
+                if normalized_code in (normalized_col1, normalized_col2):
+                    google_forms[int(normalized_col1) - 1]["submitted"] = True
+        form_statuses[code] = google_forms
     session[f'subject_authenticated_{code}'] = False
     return render_template("subject_page.html", code=code)
 
@@ -230,7 +241,7 @@ def subject_events(code):
             if code in form_statuses:
                 forms = form_statuses[code]
                 yield f"data: {json.dumps([{'url': form['url'], 'name': form['name'], 'submitted': form['submitted']} for form in forms])}\n\n"
-            time.sleep(1)  # Push updates every second
+            time.sleep(5)  # Push updates every second
 
     return Response(event_stream(), mimetype="text/event-stream")
 
